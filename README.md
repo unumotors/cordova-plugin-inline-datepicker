@@ -8,7 +8,7 @@ Allows you to display inline native date picker over your Cordova application.
 cordova.plugins.DatePicker.create(htmlElement, options, callback);
 ```
 
-Creates native date picker view (UIDatePickerView) over given element's position and size with given options. Callback function is called with an identification number which is used in events.
+Creates native date picker view (UIDatePickerView) over given element's position and size with given options. Callback function is called everytime date/time value from date picker is changed.
 
 ### Example:
 
@@ -25,18 +25,23 @@ cordova.plugins.DatePicker.create(
         'date': new Date('2016-11-24T'),
         'minimumDate': new Date()
     },
-    function (datePickerId) {
-        document.querySelector('.date-label').id = 'date-picker-' + datePickerId;
+    function (data) {
+        // this callback is called everytime input is changed
+        document.querySelector('.date-label').innerText = new Date(data.date).toLocalDateString();
     }
 );
-
-window.addEventListener('datePickerChanged', function (e) {
-    var targetDatePickerLabel = document.querySelector('#date-picker-' + e.id);
-
-    if (targetDatePickerLabel)
-        targetDatePickerLabel.innerText = e.value.toDateString();
-}, false);
 ```
+
+## Methods
+
+```js
+cordova.plugins.DatePicker.show(element, options, success); // Sets isHidden option to false for given element.
+cordova.plugins.DatePicker.hide(element, options, success); // Sets isHidden option to true for given element.
+cordova.plugins.DatePicker.remove(element, options, success); // Removes date picker view bound to given element.
+cordova.plugins.DatePicker.hideAll(element, success); // Hides all date pickers bound to given element and it's children.
+cordova.plugins.DatePicker.removeAll(element, success); // Removes all date pickers bound to given element and it's children.
+```
+
 
 ## Options
 
@@ -57,6 +62,14 @@ Type: `Boolean`
 Default value: `false`
 
 When given `true` removes all other instance of inline date pickers are removed from the web view.
+
+### `isHidden`
+
+Type: `Boolean`
+
+Default value: `false`
+
+When given `true`, picker is created but not shown in screen.
 
 ### `mode`
 

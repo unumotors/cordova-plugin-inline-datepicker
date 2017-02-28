@@ -3,12 +3,41 @@ cordova.plugins = {};
 cordova.plugins.DatePicker = {};
 
 /**
- * @param {!HTMLElement} element
- * @param {?Object=} options
- * @param {?function(number)=} success Returns date picker id
+ * @param {Element} element
+ * @param {Object=} options
+ * @param {?function(Object)=} success Returns date picker id
  * @param {?Function=} error
  */
 cordova.plugins.DatePicker.create = function(element, options, success, error) {};
+/**
+ * @param {Element} element
+ * @param {Object=} options
+ * @param {?function(Object)=} success
+ * @param {?Function=} error
+ */
+cordova.plugins.DatePicker.show = function(element, options, success, error) {};
+
+/**
+ * @param {Element} element
+ * @param {Object=} options
+ * @param {?function(Object)=} success
+ * @param {?Function=} error
+ */
+cordova.plugins.DatePicker.hide = function(element, options, success, error) {};
+
+/**
+ * @param {?Element=} root Root element to search for date pickers to hide. Defaults to document.
+ * @param {?Function=} success
+ * @param {?Function=} error
+ */
+cordova.plugins.DatePicker.hideAll = function(root, success, error) {};
+
+/**
+ * @param {?Element=} root Root element to search for date pickers to remove. Defaults to document.
+ * @param {?Function=} success
+ * @param {?Function=} error
+ */
+cordova.plugins.DatePicker.remove = function(root, success, error) {};
 
 /**
  * @param {?Function=} success
