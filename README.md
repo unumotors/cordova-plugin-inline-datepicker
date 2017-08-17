@@ -35,11 +35,11 @@ cordova.plugins.DatePicker.create(
 ## Methods
 
 ```js
-cordova.plugins.DatePicker.show(element, options, success); // Sets isHidden option to false for given element.
-cordova.plugins.DatePicker.hide(element, options, success); // Sets isHidden option to true for given element.
-cordova.plugins.DatePicker.remove(element, options, success); // Removes date picker view bound to given element.
-cordova.plugins.DatePicker.hideAll(element, success); // Hides all date pickers bound to given element and it's children.
-cordova.plugins.DatePicker.removeAll(element, success); // Removes all date pickers bound to given element and it's children.
+cordova.plugins.DatePicker.show(element, options, success, error); // Sets isHidden option to false for given element.
+cordova.plugins.DatePicker.hide(element, options, success, error); // Sets isHidden option to true for given element.
+cordova.plugins.DatePicker.remove(element, options, success, error); // Removes date picker view bound to given element.
+cordova.plugins.DatePicker.hideAll(element, success, error); // Hides all date pickers bound to given element and it's children.
+cordova.plugins.DatePicker.removeAll(success, error); // Removes all date picker instances.
 ```
 
 
