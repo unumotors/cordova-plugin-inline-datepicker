@@ -13,10 +13,10 @@ class DatePicker {
     
     let id : String
     let callbackId : String
-    
-    var timestampInMs : Int {
+
+    var timestampInMs : Int64 {
         get {
-            return Int(view.date.timeIntervalSince1970) * 1000
+            return Int64(view.date.timeIntervalSince1970) * 1000
         }
     }
     
