@@ -103,7 +103,7 @@ import Foundation
         }
         
         let frame : CGRect?;
-        if let x = options["x"] as? Int, let y = options["y"] as? Int, let width = options["width"] as? Int, let height = options["height"] as? Int {
+        if let x = options["x"] as? CGFloat, let y = options["y"] as? CGFloat, let width = options["width"] as? CGFloat, let height = options["height"] as? CGFloat {
             frame = CGRect(
                 x: x,
                 y: y,
