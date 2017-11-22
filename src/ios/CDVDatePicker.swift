@@ -52,6 +52,8 @@ import Foundation
             ids.forEach({ (id) in
                 DatePickerManager.sharedInstance.hide(id)
             })
+        } else if let id = (command.arguments[0] as? [String: Any])?["id"] as? String {
+            DatePickerManager.sharedInstance.hide(id)
         } else {
             DatePickerManager.sharedInstance.hide(parseOptions(command).id)
         }
@@ -69,6 +71,8 @@ import Foundation
             ids.forEach({ (id) in
                 DatePickerManager.sharedInstance.remove(id)
             })
+        } else if let id = (command.arguments[0] as? [String: Any])?["id"] as? String {
+            DatePickerManager.sharedInstance.hide(id)
         } else {
             DatePickerManager.sharedInstance.remove(parseOptions(command).id)
         }
@@ -99,7 +103,7 @@ import Foundation
         if let intMode = options["mode"] as? Int {
             mode = UIDatePickerMode(rawValue: intMode)!
         } else {
-            mode = .date
+            mode = .dateAndTime
         }
         
         let frame : CGRect?;
@@ -125,7 +129,7 @@ import Foundation
             mode: mode,
             maximumDate: parseDateString(options["maximumDate"] as? String),
             minimumDate: parseDateString(options["minimumDate"] as? String),
-            minuteInterval: (options["minuteInterval"] as? Int) ?? 1,
+            minuteInterval: (options["minuteInterval"] as? Int) ?? 10,
             isEnabled: options["isEnabled"] as? Bool ?? true,
             backgroundColor: nil,
             alpha: CGFloat(options["alpha"] as? Float ?? 1.0),
