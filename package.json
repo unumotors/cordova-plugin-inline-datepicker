@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-inline-datepicker",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Creates native date picker element inside given DOM element",
   "cordova": {
     "id": "cordova-plugin-inline-datepicker",
