@@ -8,6 +8,9 @@
       "ios"
     ]
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/unumotors/cordova-plugin-inline-datepicker.git"
