@@ -56,7 +56,7 @@ class DatePickerManager {
     
     @objc func onChange(notification: Notification) {
         let id = (notification.userInfo?["id"] as? String) ?? "no-id"
-        let timestamp = (notification.userInfo?["date"] as? Int) ?? 0
+        let timestamp = (notification.userInfo?["date"] as? Int64) ?? 0
 
         if let callbackId = notification.userInfo?["callbackId"] as? String {
             let result = CDVPluginResult(
