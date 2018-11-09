@@ -21,6 +21,7 @@ Creates native date picker view (UIDatePickerView) over given element's position
 cordova.plugins.DatePicker.create(
     document.querySelector('.inline-datepicker'),
     {
+        'id': 'date-from-picker-1', // this should be the unique identifier of the picker
         'mode': cordova.plugins.DatePicker.Mode.DATE, // default is DATE_AND_TIME
         'date': new Date('2016-11-24T'),
         'minimumDate': new Date()
@@ -29,6 +30,22 @@ cordova.plugins.DatePicker.create(
         // this callback is called everytime input is changed
         document.querySelector('.date-label').innerText = new Date(data.date).toLocalDateString();
     }
+);
+```
+
+To remove a picker:
+
+```js
+cordova.plugins.DatePicker.remove(
+    'id': 'date-from-picker-1'
+);
+```
+
+
+To remove multiple pickers:
+```js
+cordova.plugins.DatePicker.remove(
+    'ids': ['date-from-picker-1', 'date-from-picker-2']
 );
 ```
 
