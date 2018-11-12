@@ -44,6 +44,11 @@ exports.remove = function (root, success, error) {
     exec(success, error, 'CDVDatePicker', 'remove', [{ ids: ids }]);
 }
 
+exports.removeById = function (id, success, error) {
+  var ids = Array.isArray(id) ? id : [id];
+  exec(success, error, 'CDVDatePicker', 'remove', [{ ids: ids }]);
+}
+
 exports.removeAll = function (success, error) {
   exec(success, error, 'CDVDatePicker', 'removeAll', []);
 }

@@ -33,19 +33,19 @@ cordova.plugins.DatePicker.create(
 );
 ```
 
-To remove a picker:
+To remove a single picker:
 
 ```js
-cordova.plugins.DatePicker.remove(
-    'id': 'date-from-picker-1'
+cordova.plugins.DatePicker.removeById(
+    'date-from-picker-1'
 );
 ```
 
 
 To remove multiple pickers:
 ```js
-cordova.plugins.DatePicker.remove(
-    'ids': ['date-from-picker-1', 'date-from-picker-2']
+cordova.plugins.DatePicker.removeById(
+    ['date-from-picker-1', 'date-from-picker-2']
 );
 ```
 
