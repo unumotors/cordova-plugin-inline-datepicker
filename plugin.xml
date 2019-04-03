@@ -3,10 +3,12 @@
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Cordova Inline DatePicker</name>
-    <js-module name="DatePicker" src="www/datepicker.js">
-        <clobbers target="cordova.plugins.DatePicker" />
-    </js-module>
+    <description>Hybrid Date Picker for Android/iOS</description>
+
     <platform name="ios">
+        <js-module name="DatePicker" src="www/datepicker.js">
+            <clobbers target="cordova.plugins.DatePicker" />
+        </js-module>
         <config-file parent="/*" target="config.xml">
             <feature name="CDVDatePicker">
                 <param name="ios-package" value="CDVDatePicker" />
@@ -15,6 +17,16 @@
         <source-file src="src/ios/CDVDatePicker.swift" />
         <source-file src="src/ios/DatePicker.swift" />
         <source-file src="src/ios/DatePickerManager.swift" />
+    </platform>
+    <platform name="android">
+        <js-module name="DatePicker" src="www/androiddatepicker.js">
+            <clobbers target="cordova.plugins.DatePicker" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DatePicker">
+                <param name="android-package" value="com.mihri.DatePicker" />
+            </feature>
+        </config-file>
     </platform>
     <dependency id="cordova-plugin-add-swift-support" version="*" />
 </plugin>

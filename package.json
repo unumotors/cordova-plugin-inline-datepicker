@@ -5,7 +5,8 @@
   "cordova": {
     "id": "cordova-plugin-inline-datepicker",
     "platforms": [
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "publishConfig": {
@@ -17,7 +18,8 @@
   },
   "keywords": [
     "ecosystem:cordova",
-    "cordova-ios"
+    "cordova-ios",
+    "cordova-android"
   ],
   "author": "Can Kutlu Kinay <can@unumotors.com>",
   "license": "MIT",
